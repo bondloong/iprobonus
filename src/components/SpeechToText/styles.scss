@@ -1,0 +1,39 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
+.speech-to-text {
+	@include shadow-box;
+	@include flex-column;
+	gap: $gap-common;
+
+	&__content,
+	&__status {
+		@include text-style($font-size-common, $line-height-common, $color-primary);
+		margin: 0;
+	}
+
+	&__content {
+		color: $color-primary;
+	}
+
+	&__status {
+		@include text-style($font-size-common, $line-height-common, $color-secondary);
+	}
+
+	&__btn-wrapper {
+		@include flex-center;
+		gap: $gap-common;
+	}
+
+	&__btn {
+		align-self: center;
+
+		&--toggle {
+			@include button-styles($color-info, darken($color-info, 20%));
+		}
+
+		&--clear {
+			@include button-styles($color-danger, darken($color-danger, 20%));
+		}
+	}
+}

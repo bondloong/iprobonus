@@ -1,0 +1,31 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
+.bonuses {
+	@include shadow-box;
+	@include flex-row;
+	justify-content: space-between;
+
+	&__info {
+		@include flex-column;
+		justify-content: space-between;
+	}
+
+	&__info-quantity {
+		@include text-style($font-size-large, $line-height-large, $color-primary);
+		font-weight: 700;
+	}
+
+	&__info-burning {
+		@include text-style($font-size-common, $line-height-common, $color-secondary);
+
+		:not(:last-child) {
+			margin-right: 8px;
+		}
+	}
+
+	&__next-btn {
+		@include button-style;
+		align-self: center;
+	}
+}

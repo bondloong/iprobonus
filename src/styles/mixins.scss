@@ -1,0 +1,64 @@
+@mixin box-shadow($shadow) {
+	-webkit-box-shadow: $shadow;
+	-moz-box-shadow: $shadow;
+	box-shadow: $shadow;
+}
+
+@mixin button-style(
+	$bg-color: $background-color-common,
+	$border-color: $border-color-common,
+	$width: $width-common,
+	$height: $height-common
+) {
+	width: $width;
+	height: $height;
+	padding: 0;
+	background: $bg-color;
+	border-radius: $width;
+	border: 1px solid $border-color;
+	cursor: pointer;
+}
+
+@mixin button-styles($bg-color: transparent, $hover-color: darken($bg-color, 20%)) {
+	background-color: $bg-color;
+	color: $color-inverse;
+	border: none;
+	border-radius: 10px;
+	padding: 10px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+
+	&:hover {
+		background-color: $hover-color;
+	}
+}
+
+@mixin flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin flex-column {
+	display: flex;
+	flex-direction: column;
+}
+
+@mixin flex-row {
+	display: flex;
+	flex-direction: row;
+}
+
+@mixin text-style($font-size, $line-height, $font-color) {
+	font-size: $font-size;
+	line-height: $line-height;
+	color: $font-color;
+}
+
+@mixin shadow-box {
+	padding: $padding-common;
+	min-width: $min-width-common;
+	border-radius: $border-radius-common;
+	background: $background-color-common;
+	@include box-shadow($box-shadow-common);
+}
